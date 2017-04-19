@@ -19,6 +19,9 @@ namespace ScheduleBukepAPI
             
             List<FacultyDTO> faculties = api.getFaculties("2016","1000");
             faculties.ForEach(i => Console.Write("{0}\n",i.name));
+
+            List<SpecialtyDTO> specialtys = api.getSpecialtys("2016", "1000","9");
+            specialtys.ForEach(i => Console.Write("{0}\n", i.nameSpeciality));
         }
 
 
