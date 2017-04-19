@@ -14,13 +14,17 @@ namespace ScheduleBukepAPI
     {
         static void Main(string[] args)
         {
-            List<Faculty> Faculties = getAllFaculty();
-            foreach (Faculty f in Faculties)
+            List<FacultyDTO> Faculties = getAllFaculty();
+            foreach (FacultyDTO f in Faculties)
             {
                 showFaculty(f);
             }
         }
 
+        /// <summary>
+        /// Use method GetFaculties for get JSON.
+        /// </summary>
+        /// <returns>JSON with faculties</returns>
         private static string getJsonFromAPI()
         {
             WebRequest request = WebRequest.Create(
@@ -39,14 +43,14 @@ namespace ScheduleBukepAPI
             return json;
         }
 
-        private static List<Faculty> getAllFaculty()
+        private static List<FacultyDTO> getAllFaculty()
         {
             string json = getJsonFromAPI();
 
-            return JsonConvert.DeserializeObject<List<Faculty>>(json);
+            return JsonConvert.DeserializeObject<List<FacultyDTO>>(json);
         }
 
-        private static void showFaculty(Faculty f)
+        private static void showFaculty(FacultyDTO f)
         {
             Console.WriteLine("Faculty\n id = {0}\n name = {1}\n isActive = {2}", f.idFaculty, f.name, f.isActiveSchedule);
         }
