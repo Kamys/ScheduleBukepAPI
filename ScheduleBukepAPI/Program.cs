@@ -14,41 +14,13 @@ namespace ScheduleBukepAPI
     {
         static void Main(string[] args)
         {
-            List<FacultyDTO> Faculties = getAllFaculty();
-            foreach (FacultyDTO f in Faculties)
-            {
-                showFaculty(f);
-            }
+            SchedulesAPI api = new SchedulesAPI();
+            
+            
+            List<FacultyDTO> faculties = api.getFaculties("2016","1000");
+            faculties.ForEach(i => Console.Write("{0}\n",i.name));
         }
 
-        /// <summary>
-        /// Use method GetFaculties for get JSON.
-        /// </summary>
-        /// <returns>JSON with faculties</returns>
-        private static string getJsonFromAPI()
-        {
-            WebRequest request = WebRequest.Create(
-                          "https://my.bukep.ru:447/api/Schedule/GetFaculties?year=2016&idFilial=1000");
-
-            request.Credentials = CredentialCache.DefaultCredentials;
-            WebResponse response = request.GetResponse();
-
-            Stream dataStream = response.GetResponseStream();
-            StreamReader reader = new StreamReader(dataStream);
-            string json = reader.ReadToEnd();
-
-            reader.Close();
-            response.Close();
-
-            return json;
-        }
-
-        private static List<FacultyDTO> getAllFaculty()
-        {
-            string json = getJsonFromAPI();
-
-            return JsonConvert.DeserializeObject<List<FacultyDTO>>(json);
-        }
 
         private static void showFaculty(FacultyDTO f)
         {
