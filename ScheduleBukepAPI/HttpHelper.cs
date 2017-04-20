@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 
@@ -40,7 +41,9 @@ class HttpHelper
     /// <returns></returns>
     private string fixForArrayString(string json)
     {
-        throw new NotImplementedException();
+        string result = json.Replace(":[", ":\"[");
+        result = result.Replace("],", "]\",");
+        return result;
     }
 
     private string createUrlParameter(Dictionary<string, string> parameters)
