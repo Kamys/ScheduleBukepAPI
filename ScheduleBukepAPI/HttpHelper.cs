@@ -12,13 +12,50 @@ class HttpHelper
 {
     private const string urlApi = "https://my.bukep.ru:447/api/Schedule";
 
-    public string executeGet(string nameMethod, Dictionary<string, string> parameter)
+    public string executeGet(string nameMethod, Dictionary<string, string> parameters)
     {
-
-        string urlParameter = createUrlParameter(parameter);
-        string url = String.Format("{0}/{1}?{2}", urlApi, nameMethod, urlParameter);
+        string url = createURL(nameMethod, parameters);
         Console.WriteLine("URL = " + url);
         WebRequest request = WebRequest.Create(url);
+
+        request.Credentials = CredentialCache.DefaultCredentials;
+        WebResponse response = request.GetResponse();
+
+        Stream dataStream = response.GetResponseStream();
+        StreamReader reader = new StreamReader(dataStream);
+        string json = reader.ReadToEnd();
+
+        reader.Close();
+        response.Close();
+        json = fixForArrayString(json);
+        return json;
+    }
+
+    private string createURL(string nameMethod, Dictionary<string, string> parameter)
+    {
+        string urlParameter = createUrlParameter(parameter);
+        string url = String.Format("{0}/{1}?{2}", urlApi, nameMethod, urlParameter);
+        return url;
+    }
+
+    internal string executePost(string nameMethod, Dictionary<string, string> parameters,
+        Dictionary<string, string> parametersForPost)
+    {
+        string url = createURL(nameMethod, parameters);
+        Console.WriteLine("URL = " + url);
+        WebRequest request = WebRequest.Create(url);
+
+
+        var dataForPost = Encoding.ASCII.GetBytes(
+            createUrlParameter(parametersForPost));
+
+        request.Method = "POST";
+        request.ContentType = "application/x-www-form-urlencoded";
+        request.ContentLength = dataForPost.Length;
+
+        Stream stream =  request.GetRequestStream();
+        stream.Write(dataForPost, 0, dataForPost.Length);
+        stream.Close();
 
         request.Credentials = CredentialCache.DefaultCredentials;
         WebResponse response = request.GetResponse();
@@ -56,5 +93,6 @@ class HttpHelper
         }
         return urlParameter.ToString();
     }
+
 }
 

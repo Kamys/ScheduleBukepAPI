@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="apiDTO\CoursesDTO.cs" />
     <Compile Include="apiDTO\FacultyDTO.cs" />
     <Compile Include="apiDTO\SpecialtyDTO.cs" />
     <Compile Include="HttpHelper.cs" />
