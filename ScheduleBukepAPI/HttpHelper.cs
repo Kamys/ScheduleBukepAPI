@@ -65,6 +65,7 @@ class HttpHelper
 
         reader.Close();
         response.Close();
+        Console.WriteLine("JOSN = " + json);
         return json;
     }
 
