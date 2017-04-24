@@ -27,7 +27,6 @@ class HttpHelper
 
         reader.Close();
         response.Close();
-        json = fixForArrayString(json);
         return json;
     }
 
@@ -66,21 +65,7 @@ class HttpHelper
 
         reader.Close();
         response.Close();
-        json = fixForArrayString(json);
         return json;
-    }
-
-    /// <summary>
-    /// Fix json array value. Of "idsSpecialty": [407,1407] in "idsSpecialty": "[407,1407]".
-    /// This need for correct parsing JSON.
-    /// </summary>
-    /// <param name="json"></param>
-    /// <returns></returns>
-    private string fixForArrayString(string json)
-    {
-        string result = json.Replace(":[", ":\"[");
-        result = result.Replace("],", "]\",");
-        return result;
     }
 
     private string createUrlParameter(Dictionary<string, string> parameters)
