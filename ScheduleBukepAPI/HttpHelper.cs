@@ -38,18 +38,17 @@ class HttpHelper
     }
 
     internal string executePost(string nameMethod, Dictionary<string, string> parameters,
-        Dictionary<string, string> parametersForPost)
+        String bodyForPost)
     {
         string url = createURL(nameMethod, parameters);
         Console.WriteLine("URL = " + url);
         WebRequest request = WebRequest.Create(url);
 
 
-        var dataForPost = Encoding.ASCII.GetBytes(
-            createUrlParameter(parametersForPost));
+        var dataForPost = Encoding.ASCII.GetBytes("[387,1387]");
 
         request.Method = "POST";
-        request.ContentType = "application/x-www-form-urlencoded";
+        request.ContentType = "application/json";
         request.ContentLength = dataForPost.Length;
 
         Stream stream =  request.GetRequestStream();
