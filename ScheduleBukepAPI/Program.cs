@@ -25,6 +25,8 @@ namespace ScheduleBukepAPI
 
             List<CoursesDTO> courses = api.getCourses("2016", "1000", "9", "[387,1387]");
             courses.ForEach(i => Console.WriteLine("{0}", i.nameCourse));
+
+
         }
     }
 }

@@ -45,7 +45,7 @@ class HttpHelper
         WebRequest request = WebRequest.Create(url);
 
 
-        var dataForPost = Encoding.ASCII.GetBytes("[387,1387]");
+        var dataForPost = Encoding.ASCII.GetBytes(bodyForPost);
 
         request.Method = "POST";
         request.ContentType = "application/json";
@@ -64,7 +64,6 @@ class HttpHelper
 
         reader.Close();
         response.Close();
-        Console.WriteLine("JOSN = " + json);
         return json;
     }
 

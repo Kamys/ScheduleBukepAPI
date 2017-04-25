@@ -41,9 +41,7 @@ class SchedulesAPI
         parameters.Add("idFilial", idFilial);
         parameters.Add("idFaculty", idFaculty);
 
-        var parametersForPost = new Dictionary<string, string>();
-        parametersForPost.Add("idsSpecialty", idsSpecialty);
-        string json = httpHelper.executePost("GetCourses", parameters, parametersForPost);
+        string json = httpHelper.executePost("GetCourses", parameters, idsSpecialty);
         return getAllFaculty<CoursesDTO>(json);
     }
 
