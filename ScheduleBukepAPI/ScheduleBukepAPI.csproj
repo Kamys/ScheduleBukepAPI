@@ -51,6 +51,7 @@
     <Compile Include="apiDTO\FacultyDTO.cs" />
     <Compile Include="apiDTO\SpecialtyDTO.cs" />
     <Compile Include="apiDTO\GroupLessonDTO.cs" />
+    <Compile Include="apiDTO\GroupDTO.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="jsonExample\GetGroups.json" />
     <None Include="jsonExample\GetSpecialtys.json" />
     <None Include="jsonExample\GetFaculties.json" />
     <None Include="packages.config" />

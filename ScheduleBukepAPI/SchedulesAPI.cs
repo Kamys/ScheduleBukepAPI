@@ -57,6 +57,19 @@ class SchedulesAPI
         return getAllFaculty<GroupLessonDTO>(json);
     }
 
+    internal List<GroupDTO> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+    {
+        HttpHelper httpHelper = new HttpHelper();
+        var parameters = new Dictionary<string, string>();
+        parameters.Add("year", year);
+        parameters.Add("idFilial", idFilial);
+        parameters.Add("idFaculty", idFaculty);
+        parameters.Add("idCourse", idCourse);
+
+        string json = httpHelper.executePost("GetGroups", parameters, idsSpecialty);
+        return getAllFaculty<GroupDTO>(json);
+    }
+
     //TODO: extract in DTOFactory.
     private static List<T> getAllFaculty<T>(string json)
     {

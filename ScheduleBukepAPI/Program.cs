@@ -16,7 +16,7 @@ namespace ScheduleBukepAPI
             faculties.ForEach(i => Console.WriteLine("{0}", i.name));
 
             List<SpecialtyDTO> specialtys = api.getSpecialtys("2016", "1000", "9");
-            foreach(SpecialtyDTO specialty in specialtys)
+            foreach (SpecialtyDTO specialty in specialtys)
             {
                 Console.Write("{0}", specialty.nameSpeciality);
                 string outId = string.Join(",", specialty.idsSpecialty.ToArray());
@@ -25,6 +25,9 @@ namespace ScheduleBukepAPI
 
             List<CoursesDTO> courses = api.getCourses("2016", "1000", "9", "[387,1387]");
             courses.ForEach(i => Console.WriteLine("{0}", i.nameCourse));
+
+            List<GroupDTO> groups = api.getGroups("2016", "1000", "10083", "3", "[1417]");
+            groups.ForEach(i => Console.WriteLine("{0}", i.nameGroup));
 
             List<GroupLessonDTO> groupLessons = api.getGroupLessons("2017-02-10", "2017-02-10", "[5200,5201]");
             groupLessons.ForEach(i => Console.WriteLine("{0}", i.nameDiscipline));
