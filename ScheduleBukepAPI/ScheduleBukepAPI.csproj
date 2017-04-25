@@ -50,6 +50,7 @@
     <Compile Include="apiDTO\CoursesDTO.cs" />
     <Compile Include="apiDTO\FacultyDTO.cs" />
     <Compile Include="apiDTO\SpecialtyDTO.cs" />
+    <Compile Include="apiDTO\GroupLessonDTO.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

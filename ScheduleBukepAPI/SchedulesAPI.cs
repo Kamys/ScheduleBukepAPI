@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using ScheduleBukepAPI.apiDTO;
 using System;
+using ScheduleBukepAPI;
 
 class SchedulesAPI
 {
@@ -43,6 +44,17 @@ class SchedulesAPI
 
         string json = httpHelper.executePost("GetCourses", parameters, idsSpecialty);
         return getAllFaculty<CoursesDTO>(json);
+    }
+
+    internal List<GroupLessonDTO> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
+    {
+        HttpHelper httpHelper = new HttpHelper();
+        var parameters = new Dictionary<string, string>();
+        parameters.Add("dateFrom", dateFrom);
+        parameters.Add("dateTo", dateTo);
+
+        string json = httpHelper.executePost("GetGroupLessons", parameters, idsSheduleGroup);
+        return getAllFaculty<GroupLessonDTO>(json);
     }
 
     //TODO: extract in DTOFactory.
