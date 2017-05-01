@@ -7,7 +7,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-
+/// <summary>
+/// Use for get JSON from API BUKEP.
+/// Execute post and get requests and return JSON.
+/// </summary>
 class HttpHelper
 {
     private const string urlApi = "https://my.bukep.ru:447/api/Schedule";
