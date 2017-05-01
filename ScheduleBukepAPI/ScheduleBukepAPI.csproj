@@ -56,7 +56,8 @@
     <Compile Include="HttpHelper.cs" />
     <Compile Include="IServiceFaculties.cs" />
     <Compile Include="IServiceSchedules.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="JSONConvert.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceSchedules.cs" />
     <Compile Include="ServiceFaculties.cs" />

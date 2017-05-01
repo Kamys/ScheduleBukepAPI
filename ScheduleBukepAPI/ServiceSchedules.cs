@@ -1,7 +1,5 @@
 ﻿
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using ScheduleBukepAPI.apiDTO;
 using ScheduleBukepAPI;
 
 class ServiceSchedules : IServiceSchedules
@@ -16,12 +14,6 @@ class ServiceSchedules : IServiceSchedules
         parameters.Add("dateTo", dateTo);
 
         string json = httpHelper.executePost("GetGroupLessons", parameters, idsSheduleGroup);
-        return convertJSONToDTO<GroupLessonDTO>(json);
-    }
-
-    //TODO: extract in DTOFactory.
-    private static List<T> convertJSONToDTO<T>(string json)
-    {
-        return JsonConvert.DeserializeObject<List<T>>(json);
+        return JSONConvert.convertJSONToDTO<GroupLessonDTO>(json);
     }
 }

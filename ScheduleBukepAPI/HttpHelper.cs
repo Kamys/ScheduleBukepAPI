@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
+// TODO: make static
 /// <summary>
 /// Use for get JSON from API BUKEP.
 /// Execute post and get requests and return JSON.
