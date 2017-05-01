@@ -20,7 +20,7 @@ class SchedulesAPI
         parameters.Add("year", year);
         parameters.Add("idFilial", idFilial);
         string json = httpHelper.executeGet("GetFaculties", parameters);
-        return getAllFaculty<FacultyDTO>(json);
+        return convertJSONToDTO<FacultyDTO>(json);
     }
 
     internal List<SpecialtyDTO> getSpecialtys(string year, string idFilial, string idFaculty)
@@ -31,7 +31,7 @@ class SchedulesAPI
         parameters.Add("idFilial", idFilial);
         parameters.Add("idFaculty", idFaculty);
         string json = httpHelper.executeGet("GetSpecialtys", parameters);
-        return getAllFaculty<SpecialtyDTO>(json);
+        return convertJSONToDTO<SpecialtyDTO>(json);
     }
 
     internal List<CoursesDTO> getCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
@@ -43,7 +43,7 @@ class SchedulesAPI
         parameters.Add("idFaculty", idFaculty);
 
         string json = httpHelper.executePost("GetCourses", parameters, idsSpecialty);
-        return getAllFaculty<CoursesDTO>(json);
+        return convertJSONToDTO<CoursesDTO>(json);
     }
 
     internal List<GroupLessonDTO> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
@@ -54,7 +54,7 @@ class SchedulesAPI
         parameters.Add("dateTo", dateTo);
 
         string json = httpHelper.executePost("GetGroupLessons", parameters, idsSheduleGroup);
-        return getAllFaculty<GroupLessonDTO>(json);
+        return convertJSONToDTO<GroupLessonDTO>(json);
     }
 
     internal List<GroupDTO> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
@@ -67,11 +67,11 @@ class SchedulesAPI
         parameters.Add("idCourse", idCourse);
 
         string json = httpHelper.executePost("GetGroups", parameters, idsSpecialty);
-        return getAllFaculty<GroupDTO>(json);
+        return convertJSONToDTO<GroupDTO>(json);
     }
 
     //TODO: extract in DTOFactory.
-    private static List<T> getAllFaculty<T>(string json)
+    private static List<T> convertJSONToDTO<T>(string json)
     {
         return JsonConvert.DeserializeObject<List<T>>(json);
     }

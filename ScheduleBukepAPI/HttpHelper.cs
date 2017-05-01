@@ -61,8 +61,8 @@ class HttpHelper
         Stream dataStream = response.GetResponseStream();
         StreamReader reader = new StreamReader(dataStream);
         string json = reader.ReadToEnd();
-
         reader.Close();
+
         response.Close();
         return json;
     }
