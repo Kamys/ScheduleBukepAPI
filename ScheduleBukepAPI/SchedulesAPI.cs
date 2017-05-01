@@ -1,18 +1,12 @@
 ﻿
-using System.IO;
-using System.Net;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using ScheduleBukepAPI.apiDTO;
-using System;
 using ScheduleBukepAPI;
 
-class SchedulesAPI
+class ServiceSchedules
 {
-    /// <summary>
-    /// Use method GetFaculties for get JSON.
-    /// </summary>
-    /// <returns>JSON with faculties</returns>
+    
     public List<Faculty> getFaculties(string year, string idFilial)
     {
         HttpHelper httpHelper = new HttpHelper();
