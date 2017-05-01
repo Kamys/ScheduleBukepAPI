@@ -9,7 +9,7 @@ namespace ScheduleBukepAPI.apiDTO
     /// <summary>
     ///  DTO from API method GetFaculties.
     /// </summary>
-    class FacultyDTO
+    class Faculty
     {
         public string idFaculty { get; set; }
         public string name { get; set; }

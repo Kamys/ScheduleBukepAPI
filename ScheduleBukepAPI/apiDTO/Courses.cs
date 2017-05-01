@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ScheduleBukepAPI.apiDTO
 {
-    class CoursesDTO
+    class Courses
     {
         public string idCourse { get; set; }
         public string nameCourse { get; set; }

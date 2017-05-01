@@ -13,17 +13,17 @@ class SchedulesAPI
     /// Use method GetFaculties for get JSON.
     /// </summary>
     /// <returns>JSON with faculties</returns>
-    public List<FacultyDTO> getFaculties(string year, string idFilial)
+    public List<Faculty> getFaculties(string year, string idFilial)
     {
         HttpHelper httpHelper = new HttpHelper();
         var parameters = new Dictionary<string, string>();
         parameters.Add("year", year);
         parameters.Add("idFilial", idFilial);
         string json = httpHelper.executeGet("GetFaculties", parameters);
-        return convertJSONToDTO<FacultyDTO>(json);
+        return convertJSONToDTO<Faculty>(json);
     }
 
-    internal List<SpecialtyDTO> getSpecialtys(string year, string idFilial, string idFaculty)
+    internal List<Specialty> getSpecialtys(string year, string idFilial, string idFaculty)
     {
         HttpHelper httpHelper = new HttpHelper();
         var parameters = new Dictionary<string, string>();
@@ -31,10 +31,10 @@ class SchedulesAPI
         parameters.Add("idFilial", idFilial);
         parameters.Add("idFaculty", idFaculty);
         string json = httpHelper.executeGet("GetSpecialtys", parameters);
-        return convertJSONToDTO<SpecialtyDTO>(json);
+        return convertJSONToDTO<Specialty>(json);
     }
 
-    internal List<CoursesDTO> getCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
+    internal List<Courses> getCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
     {
         HttpHelper httpHelper = new HttpHelper();
         var parameters = new Dictionary<string, string>();
@@ -43,7 +43,7 @@ class SchedulesAPI
         parameters.Add("idFaculty", idFaculty);
 
         string json = httpHelper.executePost("GetCourses", parameters, idsSpecialty);
-        return convertJSONToDTO<CoursesDTO>(json);
+        return convertJSONToDTO<Courses>(json);
     }
 
     internal List<GroupLessonDTO> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)

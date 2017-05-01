@@ -47,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="apiDTO\CoursesDTO.cs" />
-    <Compile Include="apiDTO\FacultyDTO.cs" />
-    <Compile Include="apiDTO\SpecialtyDTO.cs" />
-    <Compile Include="apiDTO\GroupLessonDTO.cs" />
-    <Compile Include="apiDTO\GroupDTO.cs" />
+    <Compile Include="apiDTO\Courses.cs" />
+    <Compile Include="apiDTO\Faculty.cs" />
+    <Compile Include="apiDTO\Specialty.cs" />
+    <Compile Include="apiDTO\GroupLesson.cs" />
+    <Compile Include="apiDTO\Group.cs" />
     <Compile Include="HttpHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
