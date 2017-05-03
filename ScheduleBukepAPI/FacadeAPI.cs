@@ -4,7 +4,7 @@ using ScheduleBukepAPI.apiDTO;
 
 namespace ScheduleBukepAPI
 {
-    internal class FacadeAPI : IServiceFaculties, IServiceSchedules
+    internal class FacadeAPI
     {
         private static ServiceFaculties serviceFaculties = new ServiceFaculties();
         private static ServiceSchedules serviceSchedules = new ServiceSchedules();
