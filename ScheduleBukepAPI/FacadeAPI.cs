@@ -19,12 +19,12 @@ namespace ScheduleBukepAPI
             return serviceFaculties.getFaculties(year, idFilial);
         }
 
-        public List<GroupLessonDTO> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
+        public List<GroupLesson> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
         {
             return serviceSchedules.getGroupLessons(dateFrom, dateTo, idsSheduleGroup);
         }
 
-        public List<GroupDTO> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+        public List<Group> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
         {
             return serviceFaculties.getGroups(year, idFilial, idFaculty, idCourse, idsSpecialty);
         }

@@ -38,7 +38,7 @@ namespace ScheduleBukepAPI
             return JSONConvert.convertJSONToDTO<Courses>(json);
         }
 
-        public List<GroupDTO> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+        public List<Group> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
         {
             HttpHelper httpHelper = new HttpHelper();
             var parameters = new Dictionary<string, string>();
@@ -48,7 +48,7 @@ namespace ScheduleBukepAPI
             parameters.Add("idCourse", idCourse);
 
             string json = httpHelper.executePost("GetGroups", parameters, idsSpecialty);
-            return JSONConvert.convertJSONToDTO<GroupDTO>(json);
+            return JSONConvert.convertJSONToDTO<Group>(json);
         }
     }
 
