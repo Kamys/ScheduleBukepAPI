@@ -1,4 +1,4 @@
-﻿namespace ScheduleBukepAPI
+﻿namespace ScheduleBukepAPI.apiDTO
 {
     internal class GroupLesson
     {
