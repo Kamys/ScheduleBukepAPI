@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ScheduleBukepAPI
 {
-    class Main
+    class MainStart
     {
         static  void Main(string[] args)
         {

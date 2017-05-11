@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
-using ScheduleBukepAPI;
+using ScheduleBukepAPI.apiDTO;
 
-interface IServiceSchedules
+namespace ScheduleBukepAPI
 {
-    List<GroupLesson> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup);
+    interface IServiceSchedules
+    {
+        List<GroupLesson> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup);
+    }
 }
