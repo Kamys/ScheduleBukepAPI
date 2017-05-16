@@ -7,45 +7,41 @@ namespace Bukep.ShedulerApi
     {
         public List<Faculty> GetFaculties(string year, string idFilial)
         {
-            HttpHelper httpHelper = new HttpHelper();
             var parameters = new Dictionary<string, string>
             {
                 { "year", year },
                 { "idFilial", idFilial }
             };
-            string json = httpHelper.ExecuteGet("GetFaculties", parameters);
+            string json = HttpRequstHelper.ExecuteGet("GetFaculties", parameters);
             return JSONConvert.ConvertJSONToDTO<Faculty>(json);
         }
 
         public List<Specialty> GetSpecialtys(string year, string idFilial, string idFaculty)
         {
-            HttpHelper httpHelper = new HttpHelper();
             var parameters = new Dictionary<string, string>
             {
                 { "year", year },
                 { "idFilial", idFilial },
                 { "idFaculty", idFaculty }
             };
-            string json = httpHelper.ExecuteGet("GetSpecialtys", parameters);
+            string json = HttpRequstHelper.ExecuteGet("GetSpecialtys", parameters);
             return JSONConvert.ConvertJSONToDTO<Specialty>(json);
         }
 
         public List<Courses> GetCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
         {
-            HttpHelper httpHelper = new HttpHelper();
             var parameters = new Dictionary<string, string>
             {
                 { "year", year },
                 { "idFilial", idFilial },
                 { "idFaculty", idFaculty }
             };
-            string json = httpHelper.ExecutePost("GetCourses", parameters, idsSpecialty);
+            string json = HttpRequstHelper.ExecutePost("GetCourses", parameters, idsSpecialty);
             return JSONConvert.ConvertJSONToDTO<Courses>(json);
         }
 
         public List<Group> GetGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
         {
-            HttpHelper httpHelper = new HttpHelper();
             var parameters = new Dictionary<string, string>
             {
                 { "year", year },
@@ -53,7 +49,7 @@ namespace Bukep.ShedulerApi
                 { "idFaculty", idFaculty },
                 { "idCourse", idCourse }
             };
-            string json = httpHelper.ExecutePost("GetGroups", parameters, idsSpecialty);
+            string json = HttpRequstHelper.ExecutePost("GetGroups", parameters, idsSpecialty);
             return JSONConvert.ConvertJSONToDTO<Group>(json);
         }
     }

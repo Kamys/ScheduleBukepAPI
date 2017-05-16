@@ -6,16 +6,15 @@ using System.Text;
 
 namespace Bukep.ShedulerApi
 {
-    // TODO: make static
     /// <summary>
     /// Use for get JSON from API BUKEP.
     /// Execute post and get requests and return JSON.
     /// </summary>
-    class HttpHelper
+    static class HttpRequstHelper
     {
         private const string urlApi = "https://my.bukep.ru:447/api/Schedule";
 
-        public string ExecuteGet(string nameMethod, Dictionary<string, string> parameters)
+        public static string ExecuteGet(string nameMethod, IDictionary<string, string> parameters)
         {
             string url = CreateURL(nameMethod, parameters);
             Console.WriteLine("URL = " + url);
@@ -33,14 +32,14 @@ namespace Bukep.ShedulerApi
             return json;
         }
 
-        private string CreateURL(string nameMethod, Dictionary<string, string> parameter)
+        private static string CreateURL(string nameMethod, IDictionary<string, string> parameter)
         {
             string urlParameter = CreateUrlParameter(parameter);
             string url = String.Format("{0}/{1}?{2}", urlApi, nameMethod, urlParameter);
             return url;
         }
 
-        internal string ExecutePost(string nameMethod, Dictionary<string, string> parameters,
+        public static string ExecutePost(string nameMethod, IDictionary<string, string> parameters,
             String bodyForPost)
         {
             string url = CreateURL(nameMethod, parameters);
@@ -70,7 +69,7 @@ namespace Bukep.ShedulerApi
             return json;
         }
 
-        private string CreateUrlParameter(Dictionary<string, string> parameters)
+        private static string CreateUrlParameter(IDictionary<string, string> parameters)
         {
             StringBuilder urlParameter = new StringBuilder();
             foreach (string name in parameters.Keys)

@@ -57,7 +57,7 @@
     <Compile Include="apiDTO\GroupLesson.cs" />
     <Compile Include="apiDTO\Group.cs" />
     <Compile Include="FacadeAPI.cs" />
-    <Compile Include="HttpHelper.cs" />
+    <Compile Include="HttpRequstHelper.cs" />
     <Compile Include="IServiceFaculties.cs" />
     <Compile Include="IServiceSchedules.cs" />
     <Compile Include="JSONConvert.cs" />
