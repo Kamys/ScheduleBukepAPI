@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
-using ScheduleBukepAPI.apiDTO;
-using ScheduleBukepAPI;
+using Bukep.ShedulerApi.apiDTO;
+using Bukep.ShedulerApi;
 
 class ServiceSchedules : IServiceSchedules
 {

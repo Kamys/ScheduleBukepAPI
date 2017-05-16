@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-namespace ScheduleBukepAPI
+namespace Bukep.ShedulerApi
 {
     // TODO: make static
     /// <summary>

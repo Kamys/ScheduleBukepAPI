@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace ScheduleBukepAPI
+namespace Bukep.ShedulerApi
 {
     class JSONConvert
     {

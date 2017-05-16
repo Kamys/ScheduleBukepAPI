@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ScheduleBukepAPI.apiDTO
+namespace Bukep.ShedulerApi.apiDTO
 {
     public class Specialty
     {

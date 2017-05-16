@@ -1,7 +1,7 @@
-﻿using ScheduleBukepAPI.apiDTO;
+﻿using Bukep.ShedulerApi.apiDTO;
 using System.Collections.Generic;
 
-namespace ScheduleBukepAPI
+namespace Bukep.ShedulerApi
 {
     class ServiceFaculties : IServiceFaculties
     {

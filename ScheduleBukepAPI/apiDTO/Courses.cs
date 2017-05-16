@@ -1,4 +1,4 @@
-﻿namespace ScheduleBukepAPI.apiDTO
+﻿namespace Bukep.ShedulerApi.apiDTO
 {
     //TODO: rename in Course
     public class Courses

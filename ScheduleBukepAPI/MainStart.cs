@@ -1,9 +1,9 @@
-﻿using ScheduleBukepAPI.apiDTO;
+﻿using Bukep.ShedulerApi.apiDTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ScheduleBukepAPI
+namespace Bukep.ShedulerApi
 {
     class MainStart
     {
