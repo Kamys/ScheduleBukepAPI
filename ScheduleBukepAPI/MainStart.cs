@@ -11,10 +11,10 @@ namespace ScheduleBukepAPI
         {
             FacadeAPI api = new FacadeAPI();
 
-            List<Faculty> faculties = api.GetFaculties("2016", "1000");
+            List<Faculty> faculties = api.GetFaculties();
             faculties.ForEach(i => Console.WriteLine("{0}", i.Name));
 
-            List<Specialty> specialtys = api.GetSpecialtys("2016", "1000", "9");
+            List<Specialty> specialtys = api.GetSpecialtys("9");
             foreach (Specialty specialty in specialtys)
             {
                 Console.Write("{0}", specialty.NameSpeciality);
@@ -22,13 +22,13 @@ namespace ScheduleBukepAPI
                 Console.WriteLine(" id = " + outId);
             }
 
-            List<Courses> courses = api.GetCourses("2016", "1000", "9", "[387,1387]");
+            List<Courses> courses = api.GetCourses("9", "[387,1387]");
             courses.ForEach(i => Console.WriteLine("{0}", i.NameCourse));
 
-            List<Group> groups = api.GetGroups("2016", "1000", "10083", "3", "[1417]");
+            List<Group> groups = api.GetGroups("10083", "3", "[1417]");
             groups.ForEach(i => Console.WriteLine("{0}", i.NameGroup));
 
-            List<GroupLesson> groupLessons = api.GetGroupLessons("2017-02-10", "2017-02-10", "[5200,5201]");
+            List<GroupLesson> groupLessons = api.GetGroupLessons("[5200,5201]", "2017-02-10", "2017-02-10");
             groupLessons.ForEach(i => Console.WriteLine("{0}", i.NameDiscipline));
         }
     }

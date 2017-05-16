@@ -7,7 +7,7 @@ class ServiceSchedules : IServiceSchedules
 {
    
 
-    public List<GroupLesson> GetGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
+    public List<GroupLesson> GetGroupLessons(string idsSheduleGroup, string dateFrom, string dateTo)
     {
         HttpHelper httpHelper = new HttpHelper();
         var parameters = new Dictionary<string, string>();

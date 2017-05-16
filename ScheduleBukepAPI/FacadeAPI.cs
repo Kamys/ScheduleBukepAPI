@@ -8,29 +8,32 @@ namespace ScheduleBukepAPI
         private static ServiceFaculties serviceFaculties = new ServiceFaculties();
         private static ServiceSchedules serviceSchedules = new ServiceSchedules();
 
-        public List<Courses> GetCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
-        {
-            return serviceFaculties.GetCourses(year, idFilial, idFaculty, idsSpecialty);
-        }
+        private const string year = "2016";
+        private const string idFilial = "1000";
 
-        public List<Faculty> GetFaculties(string year, string idFilial)
+        public List<Faculty> GetFaculties()
         {
             return serviceFaculties.GetFaculties(year, idFilial);
         }
 
-        public List<GroupLesson> GetGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
+        public List<Specialty> GetSpecialtys(string idFaculty)
         {
-            return serviceSchedules.GetGroupLessons(dateFrom, dateTo, idsSheduleGroup);
+            return serviceFaculties.GetSpecialtys(year, idFilial, idFaculty);
         }
 
-        public List<Group> GetGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+        public List<Group> GetGroups(string idFaculty, string idCourse, string idsSpecialty)
         {
             return serviceFaculties.GetGroups(year, idFilial, idFaculty, idCourse, idsSpecialty);
         }
 
-        public List<Specialty> GetSpecialtys(string year, string idFilial, string idFaculty)
+        public List<Courses> GetCourses(string idFaculty, string idsSpecialty)
         {
-            return serviceFaculties.GetSpecialtys(year, idFilial, idFaculty);
+            return serviceFaculties.GetCourses(year, idFilial, idFaculty, idsSpecialty);
+        }
+
+        public List<GroupLesson> GetGroupLessons(string idsSheduleGroup, string dateFrom, string dateTo)
+        {
+            return serviceSchedules.GetGroupLessons(idsSheduleGroup, dateFrom, dateTo);
         }
     }
 }
