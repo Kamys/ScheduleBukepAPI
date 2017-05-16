@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Bukep.ShedulerApi
 {
-    class JSONConvert
+    static class JSONConvert
     {
         public static List<T> ConvertJSONToDTO<T>(string json)
         {
