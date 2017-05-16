@@ -14,14 +14,18 @@ namespace ScheduleBukepAPI
             Faculty selectedFaculty = SelectFaculty();
             Specialty selectedSpecialty = SelectedSpecialty(selectedFaculty);
             Courses selectedCourse = SelectedCourse(selectedFaculty, selectedSpecialty);
-
             Group selectedGroup = SelectedGroup(selectedFaculty, selectedSpecialty, selectedCourse);
 
+            ShowGroupLessons(selectedGroup);
+        }
+
+        private static void ShowGroupLessons(Group selectedGroup)
+        {
             List<GroupLesson> groupLessons = api.GetGroupLessons(
-                ConvertIdsToString(selectedGroup.IdsSchedulGroup),
-                "2017-05-15",
-                "2017-05-15"
-                );
+                            ConvertIdsToString(selectedGroup.IdsSchedulGroup),
+                            "2017-05-15",
+                            "2017-05-15"
+                            );
             for (int i = 0; i < groupLessons.Count; i++)
             {
                 GroupLesson groupLesson = groupLessons[i];
