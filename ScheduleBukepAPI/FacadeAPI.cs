@@ -8,29 +8,29 @@ namespace ScheduleBukepAPI
         private static ServiceFaculties serviceFaculties = new ServiceFaculties();
         private static ServiceSchedules serviceSchedules = new ServiceSchedules();
 
-        public List<Courses> getCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
+        public List<Courses> GetCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
         {
-            return serviceFaculties.getCourses(year, idFilial, idFaculty, idsSpecialty);
+            return serviceFaculties.GetCourses(year, idFilial, idFaculty, idsSpecialty);
         }
 
-        public List<Faculty> getFaculties(string year, string idFilial)
+        public List<Faculty> GetFaculties(string year, string idFilial)
         {
-            return serviceFaculties.getFaculties(year, idFilial);
+            return serviceFaculties.GetFaculties(year, idFilial);
         }
 
-        public List<GroupLesson> getGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
+        public List<GroupLesson> GetGroupLessons(string dateFrom, string dateTo, string idsSheduleGroup)
         {
-            return serviceSchedules.getGroupLessons(dateFrom, dateTo, idsSheduleGroup);
+            return serviceSchedules.GetGroupLessons(dateFrom, dateTo, idsSheduleGroup);
         }
 
-        public List<Group> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+        public List<Group> GetGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
         {
-            return serviceFaculties.getGroups(year, idFilial, idFaculty, idCourse, idsSpecialty);
+            return serviceFaculties.GetGroups(year, idFilial, idFaculty, idCourse, idsSpecialty);
         }
 
-        public List<Specialty> getSpecialtys(string year, string idFilial, string idFaculty)
+        public List<Specialty> GetSpecialtys(string year, string idFilial, string idFaculty)
         {
-            return serviceFaculties.getSpecialtys(year, idFilial, idFaculty);
+            return serviceFaculties.GetSpecialtys(year, idFilial, idFaculty);
         }
     }
 }

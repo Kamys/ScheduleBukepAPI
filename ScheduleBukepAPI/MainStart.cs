@@ -11,25 +11,25 @@ namespace ScheduleBukepAPI
         {
             FacadeAPI api = new FacadeAPI();
 
-            List<Faculty> faculties = api.getFaculties("2016", "1000");
-            faculties.ForEach(i => Console.WriteLine("{0}", i.name));
+            List<Faculty> faculties = api.GetFaculties("2016", "1000");
+            faculties.ForEach(i => Console.WriteLine("{0}", i.Name));
 
-            List<Specialty> specialtys = api.getSpecialtys("2016", "1000", "9");
+            List<Specialty> specialtys = api.GetSpecialtys("2016", "1000", "9");
             foreach (Specialty specialty in specialtys)
             {
-                Console.Write("{0}", specialty.nameSpeciality);
-                string outId = string.Join(",", specialty.idsSpecialty.ToArray());
+                Console.Write("{0}", specialty.NameSpeciality);
+                string outId = string.Join(",", specialty.IdsSpecialty.ToArray());
                 Console.WriteLine(" id = " + outId);
             }
 
-            List<Courses> courses = api.getCourses("2016", "1000", "9", "[387,1387]");
-            courses.ForEach(i => Console.WriteLine("{0}", i.nameCourse));
+            List<Courses> courses = api.GetCourses("2016", "1000", "9", "[387,1387]");
+            courses.ForEach(i => Console.WriteLine("{0}", i.NameCourse));
 
-            List<Group> groups = api.getGroups("2016", "1000", "10083", "3", "[1417]");
-            groups.ForEach(i => Console.WriteLine("{0}", i.nameGroup));
+            List<Group> groups = api.GetGroups("2016", "1000", "10083", "3", "[1417]");
+            groups.ForEach(i => Console.WriteLine("{0}", i.NameGroup));
 
-            List<GroupLesson> groupLessons = api.getGroupLessons("2017-02-10", "2017-02-10", "[5200,5201]");
-            groupLessons.ForEach(i => Console.WriteLine("{0}", i.nameDiscipline));
+            List<GroupLesson> groupLessons = api.GetGroupLessons("2017-02-10", "2017-02-10", "[5200,5201]");
+            groupLessons.ForEach(i => Console.WriteLine("{0}", i.NameDiscipline));
         }
     }
 }

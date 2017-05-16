@@ -2,17 +2,17 @@
 {
     public class GroupLesson
     {
-        public string nameTypeShedule { get; set; }
-        public string nameTypeWeek { get; set; }
-        public string nameDay { get; set; }
-        public string nameLesson { get; set; }
-        public string typeLesson { get; set; }
-        public string dateLesson { get; set; }
-        public string timeStartLesson { get; set; }
-        public string timeEndLesson { get; set; }
-        public string nameAuditory { get; set; }
-        public string idTeacher { get; set; }
-        public string fioTeacher { get; set; }
-        public string nameDiscipline { get; set; }
+        public string NameTypeShedule { get; set; }
+        public string NameTypeWeek { get; set; }
+        public string NameDay { get; set; }
+        public string NameLesson { get; set; }
+        public string TypeLesson { get; set; }
+        public string DateLesson { get; set; }
+        public string TimeStartLesson { get; set; }
+        public string TimeEndLesson { get; set; }
+        public string NameAuditory { get; set; }
+        public string IdTeacher { get; set; }
+        public string FioTeacher { get; set; }
+        public string NameDiscipline { get; set; }
     }
 }

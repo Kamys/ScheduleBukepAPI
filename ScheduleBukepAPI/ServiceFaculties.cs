@@ -5,50 +5,56 @@ namespace ScheduleBukepAPI
 {
     class ServiceFaculties : IServiceFaculties
     {
-        public List<Faculty> getFaculties(string year, string idFilial)
+        public List<Faculty> GetFaculties(string year, string idFilial)
         {
             HttpHelper httpHelper = new HttpHelper();
-            var parameters = new Dictionary<string, string>();
-            parameters.Add("year", year);
-            parameters.Add("idFilial", idFilial);
-            string json = httpHelper.executeGet("GetFaculties", parameters);
-            return JSONConvert.convertJSONToDTO<Faculty>(json);
+            var parameters = new Dictionary<string, string>
+            {
+                { "year", year },
+                { "idFilial", idFilial }
+            };
+            string json = httpHelper.ExecuteGet("GetFaculties", parameters);
+            return JSONConvert.ConvertJSONToDTO<Faculty>(json);
         }
 
-        public List<Specialty> getSpecialtys(string year, string idFilial, string idFaculty)
+        public List<Specialty> GetSpecialtys(string year, string idFilial, string idFaculty)
         {
             HttpHelper httpHelper = new HttpHelper();
-            var parameters = new Dictionary<string, string>();
-            parameters.Add("year", year);
-            parameters.Add("idFilial", idFilial);
-            parameters.Add("idFaculty", idFaculty);
-            string json = httpHelper.executeGet("GetSpecialtys", parameters);
-            return JSONConvert.convertJSONToDTO<Specialty>(json);
+            var parameters = new Dictionary<string, string>
+            {
+                { "year", year },
+                { "idFilial", idFilial },
+                { "idFaculty", idFaculty }
+            };
+            string json = httpHelper.ExecuteGet("GetSpecialtys", parameters);
+            return JSONConvert.ConvertJSONToDTO<Specialty>(json);
         }
 
-        public List<Courses> getCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
+        public List<Courses> GetCourses(string year, string idFilial, string idFaculty, string idsSpecialty)
         {
             HttpHelper httpHelper = new HttpHelper();
-            var parameters = new Dictionary<string, string>();
-            parameters.Add("year", year);
-            parameters.Add("idFilial", idFilial);
-            parameters.Add("idFaculty", idFaculty);
-
-            string json = httpHelper.executePost("GetCourses", parameters, idsSpecialty);
-            return JSONConvert.convertJSONToDTO<Courses>(json);
+            var parameters = new Dictionary<string, string>
+            {
+                { "year", year },
+                { "idFilial", idFilial },
+                { "idFaculty", idFaculty }
+            };
+            string json = httpHelper.ExecutePost("GetCourses", parameters, idsSpecialty);
+            return JSONConvert.ConvertJSONToDTO<Courses>(json);
         }
 
-        public List<Group> getGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
+        public List<Group> GetGroups(string year, string idFilial, string idFaculty, string idCourse, string idsSpecialty)
         {
             HttpHelper httpHelper = new HttpHelper();
-            var parameters = new Dictionary<string, string>();
-            parameters.Add("year", year);
-            parameters.Add("idFilial", idFilial);
-            parameters.Add("idFaculty", idFaculty);
-            parameters.Add("idCourse", idCourse);
-
-            string json = httpHelper.executePost("GetGroups", parameters, idsSpecialty);
-            return JSONConvert.convertJSONToDTO<Group>(json);
+            var parameters = new Dictionary<string, string>
+            {
+                { "year", year },
+                { "idFilial", idFilial },
+                { "idFaculty", idFaculty },
+                { "idCourse", idCourse }
+            };
+            string json = httpHelper.ExecutePost("GetGroups", parameters, idsSpecialty);
+            return JSONConvert.ConvertJSONToDTO<Group>(json);
         }
     }
 

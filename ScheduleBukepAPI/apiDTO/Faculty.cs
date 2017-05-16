@@ -11,8 +11,8 @@ namespace ScheduleBukepAPI.apiDTO
     /// </summary>
     public class Faculty
     {
-        public string idFaculty { get; set; }
-        public string name { get; set; }
-        public bool isActiveSchedule { get; set; }
+        public string IdFaculty { get; set; }
+        public string Name { get; set; }
+        public bool IsActiveSchedule { get; set; }
     }
 }

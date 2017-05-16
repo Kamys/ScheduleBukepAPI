@@ -15,9 +15,9 @@ namespace ScheduleBukepAPI
     {
         private const string urlApi = "https://my.bukep.ru:447/api/Schedule";
 
-        public string executeGet(string nameMethod, Dictionary<string, string> parameters)
+        public string ExecuteGet(string nameMethod, Dictionary<string, string> parameters)
         {
-            string url = createURL(nameMethod, parameters);
+            string url = CreateURL(nameMethod, parameters);
             Console.WriteLine("URL = " + url);
             WebRequest request = WebRequest.Create(url);
 
@@ -33,17 +33,17 @@ namespace ScheduleBukepAPI
             return json;
         }
 
-        private string createURL(string nameMethod, Dictionary<string, string> parameter)
+        private string CreateURL(string nameMethod, Dictionary<string, string> parameter)
         {
-            string urlParameter = createUrlParameter(parameter);
+            string urlParameter = CreateUrlParameter(parameter);
             string url = String.Format("{0}/{1}?{2}", urlApi, nameMethod, urlParameter);
             return url;
         }
 
-        internal string executePost(string nameMethod, Dictionary<string, string> parameters,
+        internal string ExecutePost(string nameMethod, Dictionary<string, string> parameters,
             String bodyForPost)
         {
-            string url = createURL(nameMethod, parameters);
+            string url = CreateURL(nameMethod, parameters);
             Console.WriteLine("URL = " + url);
             WebRequest request = WebRequest.Create(url);
 
@@ -70,7 +70,7 @@ namespace ScheduleBukepAPI
             return json;
         }
 
-        private string createUrlParameter(Dictionary<string, string> parameters)
+        private string CreateUrlParameter(Dictionary<string, string> parameters)
         {
             StringBuilder urlParameter = new StringBuilder();
             foreach (string name in parameters.Keys)

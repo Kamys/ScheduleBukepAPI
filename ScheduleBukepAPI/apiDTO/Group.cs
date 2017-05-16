@@ -4,13 +4,13 @@ namespace ScheduleBukepAPI.apiDTO
 {
     public class Group
     {
-        public IList<int> idsSchedulGroup { get; set; }
-        public string nameGroup { get; set; }
-        public string affixusNameGroup { get; set; }
-        public string nameGroupOld { get; set; }
-        public string idSemestr { get; set; }
-        public string nameTypeShedule { get; set; }
-        public string scheduleDateFrom { get; set; }
-        public string scheduleDateTo { get; set; }
+        public IList<int> IdsSchedulGroup { get; set; }
+        public string NameGroup { get; set; }
+        public string AffixusNameGroup { get; set; }
+        public string NameGroupOld { get; set; }
+        public string IdSemestr { get; set; }
+        public string NameTypeShedule { get; set; }
+        public string ScheduleDateFrom { get; set; }
+        public string ScheduleDateTo { get; set; }
     }
 }

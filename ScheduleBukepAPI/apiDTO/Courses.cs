@@ -2,7 +2,7 @@
 {
     public class Courses
     {
-        public string idCourse { get; set; }
-        public string nameCourse { get; set; }
+        public string IdCourse { get; set; }
+        public string NameCourse { get; set; }
     }
 }
