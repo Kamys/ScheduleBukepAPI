@@ -2,7 +2,7 @@
 
 namespace ScheduleBukepAPI.apiDTO
 {
-    class Specialty
+    public class Specialty
     {
         public IList<int> idsSpecialty { get; set; }
         public string nameSpeciality { get; set; }

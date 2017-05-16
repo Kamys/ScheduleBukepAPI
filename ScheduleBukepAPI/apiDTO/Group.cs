@@ -2,7 +2,7 @@
 
 namespace ScheduleBukepAPI.apiDTO
 {
-    internal class Group
+    public class Group
     {
         public IList<int> idsSchedulGroup { get; set; }
         public string nameGroup { get; set; }

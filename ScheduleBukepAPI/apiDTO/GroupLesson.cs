@@ -1,6 +1,6 @@
 ﻿namespace ScheduleBukepAPI.apiDTO
 {
-    internal class GroupLesson
+    public class GroupLesson
     {
         public string nameTypeShedule { get; set; }
         public string nameTypeWeek { get; set; }
@@ -14,7 +14,5 @@
         public string idTeacher { get; set; }
         public string fioTeacher { get; set; }
         public string nameDiscipline { get; set; }
-        
-        
     }
 }

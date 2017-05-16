@@ -3,7 +3,7 @@ using ScheduleBukepAPI.apiDTO;
 
 namespace ScheduleBukepAPI
 {
-    internal class FacadeAPI
+    public class FacadeAPI
     {
         private static ServiceFaculties serviceFaculties = new ServiceFaculties();
         private static ServiceSchedules serviceSchedules = new ServiceSchedules();
