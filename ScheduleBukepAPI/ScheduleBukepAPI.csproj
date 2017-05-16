@@ -68,9 +68,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="jsonExample\GetGroups.json" />
-    <None Include="jsonExample\GetSpecialtys.json" />
-    <None Include="jsonExample\GetFaculties.json" />
+    <None Include="resources\jsonExample\GetGroups.json" />
+    <None Include="resources\jsonExample\GetSpecialtys.json" />
+    <None Include="resources\jsonExample\GetFaculties.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
