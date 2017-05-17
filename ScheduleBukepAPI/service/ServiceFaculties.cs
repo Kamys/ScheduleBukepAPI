@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Bukep.ShedulerApi
 {
+    //TODO: Заменить List на IEnumerable
     class ServiceFaculties : IServiceFaculties
     {
         public List<Faculty> GetFaculties(string year, string idFilial)

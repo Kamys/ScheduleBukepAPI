@@ -5,6 +5,9 @@ using System.Linq;
 
 namespace Bukep.ShedulerApi
 {
+    /// <summary>
+    /// Класс для работы с API через консоль.
+    /// </summary>
     class MainStart
     {
         private static FacadeAPI api = new FacadeAPI();
