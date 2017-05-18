@@ -10,8 +10,6 @@ namespace Bukep.ShedulerApi
     /// </summary>
     class MainStart
     {
-        private static FacadeAPI api = new FacadeAPI();
-
         static void Main(string[] args)
         {
             Faculty selectedFaculty = SelectFaculty();
@@ -24,7 +22,7 @@ namespace Bukep.ShedulerApi
 
         private static void ShowGroupLessons(Group selectedGroup)
         {
-            List<GroupLesson> groupLessons = api.GetGroupLessons(
+            List<GroupLesson> groupLessons = FacadeAPI.GetGroupLessons(
                             ConvertIdsToString(selectedGroup.IdsSchedulGroup),
                             "2017-05-15",
                             "2017-05-15"
@@ -52,7 +50,7 @@ namespace Bukep.ShedulerApi
 
         private static Group SelectedGroup(Faculty selectedFaculty, Specialty selectedSpecialty, Courses selectedCourse)
         {
-            List<Group> groups = api.GetGroups(
+            List<Group> groups = FacadeAPI.GetGroups(
                 selectedFaculty.IdFaculty,
                 selectedCourse.IdCourse,
                 ConvertIdsToString(selectedSpecialty.IdsSpecialty)
@@ -74,7 +72,7 @@ namespace Bukep.ShedulerApi
             string IdsSpecialty = ConvertIdsToString(selectedSpecialty.IdsSpecialty);
             Console.WriteLine("IdsSpecialty = " + IdsSpecialty);
 
-            List<Courses> courses = api.GetCourses(selectedFaculty.IdFaculty, IdsSpecialty);
+            List<Courses> courses = FacadeAPI.GetCourses(selectedFaculty.IdFaculty, IdsSpecialty);
             for (int i = 0; i < courses.Count; i++)
             {
                 Courses course = courses[i];
@@ -88,7 +86,7 @@ namespace Bukep.ShedulerApi
 
         private static Specialty SelectedSpecialty(Faculty selectedFaculty)
         {
-            List<Specialty> specialtys = api.GetSpecialtys(selectedFaculty.IdFaculty);
+            List<Specialty> specialtys = FacadeAPI.GetSpecialtys(selectedFaculty.IdFaculty);
 
             for (int i = 0; i < specialtys.Count; i++)
             {
@@ -104,7 +102,7 @@ namespace Bukep.ShedulerApi
         private static Faculty SelectFaculty()
         {
 
-            List<Faculty> faculties = api.GetFaculties();
+            List<Faculty> faculties = FacadeAPI.GetFaculties();
             for (int i = 0; i < faculties.Count; i++)
             {
                 Console.WriteLine("{0}. {1}", i, faculties[i].Name);

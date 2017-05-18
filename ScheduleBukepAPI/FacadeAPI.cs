@@ -3,7 +3,7 @@ using Bukep.ShedulerApi.apiDTO;
 
 namespace Bukep.ShedulerApi
 {
-    public class FacadeAPI
+    public static class FacadeAPI
     {
         private static ServiceFaculties serviceFaculties = new ServiceFaculties();
         private static ServiceSchedules serviceSchedules = new ServiceSchedules();
@@ -11,27 +11,27 @@ namespace Bukep.ShedulerApi
         private const string year = "2016";
         private const string idFilial = "1000";
 
-        public List<Faculty> GetFaculties()
+        public static List<Faculty> GetFaculties()
         {
             return serviceFaculties.GetFaculties(year, idFilial);
         }
 
-        public List<Specialty> GetSpecialtys(string idFaculty)
+        public static List<Specialty> GetSpecialtys(string idFaculty)
         {
             return serviceFaculties.GetSpecialtys(year, idFilial, idFaculty);
         }
 
-        public List<Group> GetGroups(string idFaculty, string idCourse, string idsSpecialty)
+        public static List<Group> GetGroups(string idFaculty, string idCourse, string idsSpecialty)
         {
             return serviceFaculties.GetGroups(year, idFilial, idFaculty, idCourse, idsSpecialty);
         }
 
-        public List<Courses> GetCourses(string idFaculty, string idsSpecialty)
+        public static List<Courses> GetCourses(string idFaculty, string idsSpecialty)
         {
             return serviceFaculties.GetCourses(year, idFilial, idFaculty, idsSpecialty);
         }
 
-        public List<GroupLesson> GetGroupLessons(string idsSheduleGroup, string dateFrom, string dateTo)
+        public static List<GroupLesson> GetGroupLessons(string idsSheduleGroup, string dateFrom, string dateTo)
         {
             return serviceSchedules.GetGroupLessons(idsSheduleGroup, dateFrom, dateTo);
         }
