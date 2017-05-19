@@ -57,6 +57,9 @@
     <Compile Include="apiDTO\GroupLesson.cs" />
     <Compile Include="apiDTO\Group.cs" />
     <Compile Include="FacadeAPI.cs" />
+    <Compile Include="helper\DTOBuilder.cs" />
+    <Compile Include="helper\fake\ServiceFacultiesFake.cs" />
+    <Compile Include="helper\fake\ServiceSchedulesFake.cs" />
     <Compile Include="helper\HttpRequstHelper.cs" />
     <Compile Include="service\IServiceFaculties.cs" />
     <Compile Include="service\IServiceSchedules.cs" />
