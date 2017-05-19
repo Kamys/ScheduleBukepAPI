@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Bukep.ShedulerApi.apiDTO;
+using System.Linq;
 
 namespace Bukep.ShedulerApi
 {
@@ -34,6 +35,13 @@ namespace Bukep.ShedulerApi
         public static List<GroupLesson> GetGroupLessons(string idsSheduleGroup, string dateFrom, string dateTo)
         {
             return serviceSchedules.GetGroupLessons(idsSheduleGroup, dateFrom, dateTo);
+        }
+
+        public static string ConvertIdsToString(IList<int> ids)
+        {
+            string result = string.Join(",", ids.ToArray());
+            result = "[" + result + "]";
+            return result;
         }
     }
 }
