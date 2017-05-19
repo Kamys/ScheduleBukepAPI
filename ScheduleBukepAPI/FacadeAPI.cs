@@ -6,8 +6,8 @@ namespace Bukep.ShedulerApi
 {
     public static class FacadeAPI
     {
-        private static ServiceFaculties serviceFaculties = new ServiceFaculties();
-        private static ServiceSchedules serviceSchedules = new ServiceSchedules();
+        private static IServiceFaculties serviceFaculties = new ServiceFaculties();
+        private static IServiceSchedules serviceSchedules = new ServiceSchedules();
 
         private const string year = "2016";
         private const string idFilial = "1000";
@@ -39,9 +39,16 @@ namespace Bukep.ShedulerApi
 
         public static string ConvertIdsToString(IList<int> ids)
         {
+            if (ids == null) return "";
             string result = string.Join(",", ids.ToArray());
             result = "[" + result + "]";
             return result;
         }
+
+        public static void UseServiceFake()
+        {
+            serviceFaculties = new ServiceFacultiesFake();
+            serviceSchedules = new ServiceSchedulesFake();
+    }
     }
 }

@@ -12,6 +12,7 @@ namespace Bukep.ShedulerApi
     {
         static void Main(string[] args)
         {
+            FacadeAPI.UseServiceFake();
             Faculty selectedFaculty = SelectFaculty();
             Specialty selectedSpecialty = SelectedSpecialty(selectedFaculty);
             Courses selectedCourse = SelectedCourse(selectedFaculty, selectedSpecialty);
@@ -23,7 +24,7 @@ namespace Bukep.ShedulerApi
         private static void ShowGroupLessons(Group selectedGroup)
         {
             List<GroupLesson> groupLessons = FacadeAPI.GetGroupLessons(
-                            ConvertIdsToString(selectedGroup.IdsSchedulGroup),
+                            FacadeAPI.ConvertIdsToString(selectedGroup.IdsSchedulGroup),
                             "2017-05-15",
                             "2017-05-15"
                             );
@@ -53,12 +54,12 @@ namespace Bukep.ShedulerApi
             List<Group> groups = FacadeAPI.GetGroups(
                 selectedFaculty.IdFaculty,
                 selectedCourse.IdCourse,
-                ConvertIdsToString(selectedSpecialty.IdsSpecialty)
+                FacadeAPI.ConvertIdsToString(selectedSpecialty.IdsSpecialty)
                 );
             for (int i = 0; i < groups.Count; i++)
             {
                 Group group = groups[i];
-                Console.WriteLine("{0}. {1} = {2}", i, group.NameGroup, ConvertIdsToString(group.IdsSchedulGroup));
+                Console.WriteLine("{0}. {1} = {2}", i, group.NameGroup, FacadeAPI.ConvertIdsToString(group.IdsSchedulGroup));
             }
 
             int numberGroup = AskNumber();
@@ -69,7 +70,7 @@ namespace Bukep.ShedulerApi
 
         private static Courses SelectedCourse(Faculty selectedFaculty, Specialty selectedSpecialty)
         {
-            string IdsSpecialty = ConvertIdsToString(selectedSpecialty.IdsSpecialty);
+            string IdsSpecialty = FacadeAPI.ConvertIdsToString(selectedSpecialty.IdsSpecialty);
             Console.WriteLine("IdsSpecialty = " + IdsSpecialty);
 
             List<Courses> courses = FacadeAPI.GetCourses(selectedFaculty.IdFaculty, IdsSpecialty);
@@ -91,7 +92,7 @@ namespace Bukep.ShedulerApi
             for (int i = 0; i < specialtys.Count; i++)
             {
                 Specialty specialty = specialtys[i];
-                string Ids = ConvertIdsToString(specialty.IdsSpecialty);
+                string Ids = FacadeAPI.ConvertIdsToString(specialty.IdsSpecialty);
                 Console.WriteLine("{0}. {1} id = {2}", i, specialty.NameSpeciality, Ids);
             }
             int number = AskNumber();
@@ -111,13 +112,6 @@ namespace Bukep.ShedulerApi
             int numberFaculty = AskNumber();
 
             return faculties[numberFaculty];
-        }
-
-        private static string ConvertIdsToString(IList<int> ids)
-        {
-            string result = string.Join(",", ids.ToArray());
-            result = "[" + result + "]";
-            return result;
         }
 
         private static int AskNumber()
