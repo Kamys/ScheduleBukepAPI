@@ -10,10 +10,10 @@ namespace Bukep.ShedulerApi
         {
             List<GroupLesson> groupLessons = new List<GroupLesson>
             {
-                DTOBuilder.CreateGroupLesson("GroupLesson 1"),
-                DTOBuilder.CreateGroupLesson("GroupLesson 2"),
-                DTOBuilder.CreateGroupLesson("GroupLesson 3"),
-                DTOBuilder.CreateGroupLesson("GroupLesson 4")
+                DTOBuilderFake.CreateGroupLesson("GroupLesson 1"),
+                DTOBuilderFake.CreateGroupLesson("GroupLesson 2"),
+                DTOBuilderFake.CreateGroupLesson("GroupLesson 3"),
+                DTOBuilderFake.CreateGroupLesson("GroupLesson 4")
             };
             return groupLessons;
         }
