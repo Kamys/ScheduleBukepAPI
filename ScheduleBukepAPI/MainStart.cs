@@ -1,7 +1,6 @@
 ﻿using Bukep.ShedulerApi.apiDTO;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Bukep.ShedulerApi
 {
@@ -11,6 +10,20 @@ namespace Bukep.ShedulerApi
     class MainStart
     {
         static void Main(string[] args)
+        {
+            Start();
+        }
+
+        private static void ExampleGetDTOFromConsole()
+        {
+            string json = Console.ReadLine();
+            Group group = JSONConvert.ConvertJSONToDTO<Group>(json);
+            Console.WriteLine(group.NameGroup);
+            string jsonOfDTO = JSONConvert.ConvertDTOToJSON<Group>(group);
+            Console.WriteLine("jsonOfDTO = " + jsonOfDTO);
+        }
+
+        private static void Start()
         {
             FacadeAPI.UseServiceFake();
             Faculty selectedFaculty = SelectFaculty();

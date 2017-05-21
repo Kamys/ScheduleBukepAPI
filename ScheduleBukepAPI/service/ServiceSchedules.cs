@@ -15,6 +15,6 @@ class ServiceSchedules : IServiceSchedules
             { "dateTo", dateTo }
         };
         string json = HttpRequstHelper.ExecutePost("GetGroupLessons", parameters, idsSheduleGroup);
-        return JSONConvert.ConvertJSONToDTO<GroupLesson>(json);
+        return JSONConvert.ConvertJSONToListDTO<GroupLesson>(json);
     }
 }
